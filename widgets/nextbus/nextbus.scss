@@ -1,0 +1,44 @@
+$background-color:  #AD0000;
+
+$full-color:  rgba(255, 255, 255, 1);
+$light-color: rgba(255, 255, 255, 0.7);
+
+
+.widget-nextbus {
+
+  background-color: $background-color;
+
+  .title {
+    color: $light-color;
+  }
+
+  .temp {
+    color: $full-color;
+  }
+
+  .summary {
+    color: $light-color;
+  }
+
+  .more-info {
+      color: $light-color;
+  }
+
+  .updated-at {
+    color: $light-color;
+  }
+}
+
+
+h2 {
+text-transform: none !important;
+
+}
+
+img {
+  position: absolute;
+  top:5%;
+  left:5%;
+  width:65%;
+  opacity:0.2;
+}
