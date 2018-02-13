@@ -10,7 +10,7 @@ south_stop_id = "8478"
 east_stop_id = "5328"
 west_stop_id = "5326"
 
-SCHEDULER.every '1m', :first_in => 0 do |job|
+SCHEDULER.every '5s', :first_in => 0 do |job|
   send_event('nextbus_north', generate_payload(north_stop_id))
   send_event('nextbus_south', generate_payload(south_stop_id))
   send_event('nextbus_east', generate_payload(east_stop_id))
@@ -67,28 +67,5 @@ def do_parse(data)
     end
   end
 
-  
-#  predictions.each do |route|
-#    tag = route['routeTag']
-#    ret[tag] << 2
-#    #pp route
-#    #puts "---------"
-#  end
-
-
-#  for route in predictions;
-#    pp route['direction']
-#    #pp route
-#    #puts "-------------"
-#
-#    for prediction in route;
-#      #puts prediction
-#    end
-#  end
-  
-  #pp data
   ret
-  #pp ret
-  #{"24E" => [4, 5, 6], "24A" => [1, 10, 17], "24B" => [2, 11, 47]}
-  #{"code" => "24E", "times" => [3, 4, 5, 6]}
 end
