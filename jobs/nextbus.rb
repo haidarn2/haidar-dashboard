@@ -39,7 +39,7 @@ def format_time_str(code, times)
   if (code.nil? || times.nil?)
     ""
   else
-    code + ': ' + times.map { |time| time == 0 ? "Due" : "#{time}m"}.join(', ')
+    code + ': ' + times[0,3].map { |time| time == 0 ? "Due" : "#{time}m"}.join(', ')
   end
 end
 
