@@ -1,3 +1,13 @@
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1}]')
+  Dashing.widget_base_dimensions = [250, 300]
+  //Dashing.numColumns = 5
+});
+</script>
+
+
 <% content_for :title do %>My super sweet dashboard<% end %>
 <div class="gridster">
   <ul>
@@ -26,27 +36,27 @@
 
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="nextbus_north" data-view="Nextbus" data-title="TTC NORTH 🡱">
+      <div data-id="nextbus_north" data-view="Nextbus" data-title="24 Victoria Park [N]">
       </div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="nextbus_south" data-view="Nextbus" data-title="TTC SOUTH 🡳">
+      <div data-id="nextbus_south" data-view="Nextbus" data-title="24 Victoria Park [S]">
       </div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="nextbus_east" data-view="Nextbus" data-title="TTC EAST 🡲">
+      <div data-id="nextbus_east" data-view="Nextbus" data-title="54 Lawrence [E]">
       </div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="nextbus_west" data-view="Nextbus" data-title="TTC WEST 🡰">
+      <div data-id="nextbus_west" data-view="Nextbus" data-title="54 Lawrence [W]">
       </div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="forecast" data-view="Forecast" data-title="Weather Forecast" >
       </div>
     </li>
 
   </ul>
-  <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
+  <center><div style="font-size: 12px">Work in progress!</div></center>
 </div>
