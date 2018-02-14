@@ -27,11 +27,13 @@ SCHEDULER.every '1.5m', :first_in => 0 do |job|
 end
 =end
 
-SCHEDULER.every '1.5m', :first_in => 0 do |job|
-  #uri = URI.parse("https://api.darksky.net/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}?units=#{forecast_units}")
-  #response = Net::HTTP.get_response(uri)
-  #forecast = JSON.parse(response.body)  
-  forecast_current_temp = "69"
-  forecast_hour_summary = "lol kappa pride"
-  send_event('forecast', { temperature: "#{forecast_current_temp}&deg;", hour: "#{forecast_hour_summary}"})
+SCHEDULER.every '2m', :first_in => 0 do |job|
+  uri = URI.parse("https://api.darksky.net/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}?units=#{forecast_units}")
+  response = Net::HTTP.get_response(uri)
+  forecast = JSON.parse(response.body)  
+  #forecast_current_temp = "69"
+  #forecast_hour_summary = "lol kappa pride"
+  forecast_current_temp = forecast["currently"]["temperature"].round
+  forecast_hour_summary = forecast["minutely"]["summary"]
+  send_event('forecast', { temperature: "#{forecast_current_temp}&deg;C", hour: "#{forecast_hour_summary}"})
 end
