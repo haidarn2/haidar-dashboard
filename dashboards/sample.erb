@@ -1,7 +1,7 @@
 <script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1}]')
+  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":4,"size_y":1}]')
   Dashing.widget_base_dimensions = [250, 300]
   //Dashing.numColumns = 5
 });
@@ -59,6 +59,11 @@ $(function() {
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-view="Clock"></div>
       <i class="fa fa-clock-o icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="whoshome" data-view="Whoshome" data-title="Who's home?" >
+      </div>
     </li>
 
   </ul>
